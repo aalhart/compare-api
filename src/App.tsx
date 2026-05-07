@@ -297,13 +297,12 @@ type RequestPanelRef = {
   getLastSent: () => HistoryItem | null;
 };
 
-const RequestPanel = ({ dark, label, onResponse, diffMap, otherHasData, onRequestSent }: {
+const RequestPanel = ({ dark, label, onResponse, diffMap, otherHasData }: {
   dark: boolean;
   label: string;
   onResponse: (r: ResponseData, item: HistoryItem) => void;
   diffMap: DiffMap;
   otherHasData: boolean;
-  onRequestSent?: () => void;
 }, ref: React.Ref<RequestPanelRef>) => {
   const [method, setMethod] = useState("GET");
   const [url, setUrl] = useState("");
